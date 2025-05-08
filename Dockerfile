@@ -1,4 +1,4 @@
-FROM bellsoft/liberica-runtime-container:jdk-21-stream-musl as builder
+FROM maven:3.8-jdk-11 AS builder
 WORKDIR /home/app
 COPY . /home/app
 RUN chmod +x ./mvnw
