@@ -1,4 +1,4 @@
-FROM maven:3.8-jdk-11 AS builder
+FROM maven:latest AS builder
 WORKDIR /home/app
 COPY . /home/app
 RUN chmod +x ./mvnw
