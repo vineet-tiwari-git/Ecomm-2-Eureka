@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eureka-deployment
+  labels:
+    app: ecomm-eureka
+spec:
+  selector:
+    matchLabels:
+      app: ecomm-eureka
+  template:
+    metadata:
+      name: ecomm-eureka
+      labels:
+        app: ecomm-eureka
+    spec:
+      containers:
+        - name: eureka-service
+          image: vineettiwarigithub/ecomm-v2-eurekaservice:latest
+          ports:
+            - containerPort: 8761
+              name: eureka-port
+  replicas: 1
+          
